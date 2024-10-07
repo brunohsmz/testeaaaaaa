@@ -1,0 +1,132 @@
+/* Responsivo da 1ª Pagina (responsivo == como fica em telas menores, como o celular */
+/* Não é uma parte muito importante, provavelmente nem será usada */
+
+@media screen and (max-width: 900px){
+    header .menu-desktop, header .saiba-mais{
+        display: none;
+    }  
+
+    header.rolar .menu-mob{
+        display: block;
+    }
+
+    header .trilho{
+        display: none;
+    }
+
+    header.menu-mob-aberto .menu-mobile.abrir .trilho{
+        display: block;
+        z-index: 9999;
+    }
+
+    header.menu-mob-aberto .menu-mobile.abrir .trilho .indicador{
+        display: block;
+    }
+    
+    body.page2 header .menu-mob {
+        display: block;
+    }
+    
+}
+@media screen and (max-width: 650px){
+    /* Responsivo Logo */
+    header .logo img{
+        max-width: 270px;
+        align-items: left;
+    }
+
+    /* Responsivo site */
+    .site .txt h1{
+        font-size: 4.5em;
+        line-height: 1.1;
+        font-weight: 200;
+        text-align: center;
+        margin-top: 200px;
+        margin-bottom: 10px;
+    }
+    .site .txt h1 span{
+        font-weight: 800;
+    }
+    .site .txt p{
+        font-size: 18px;
+    }
+
+    /* Responsivo Desenvolvimento */
+    section.desenvolve{
+        padding: 8px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .desenvolve .itens-bloco{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 13px;
+        padding-bottom: px;
+    }
+    .desenvolve .itens-bloco .img-itens img{
+        width: 100%;   
+    }
+    .desenvolve .itens-bloco .txt-itens{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .desenvolve .itens-bloco .txt-itens p{
+        margin-bottom: 10px;
+    }
+    .desenvolve .itens-bloco .item-1{
+        order: 1;
+    }
+    .desenvolve .itens-bloco .item-2{
+        order: 0;
+    }
+
+    /* Responsivo NextPage */
+    section.paginaum{
+        padding: 0px;
+    }
+    .paginaum .icons-pagina{
+        padding: 12px;
+    }
+    .paginaum .icons-pagina button{
+        width: 100%;
+        height: 70px;
+        margin: 0 auto 10px auto;
+    }
+
+    /* Responsivo Rodapé */
+    footer .middle-footer a{
+        font-size: 15.1px;
+    }
+}
+
+/* Segunda Página */
+    body.page2 header .logo img {
+        max-width: 240px;
+        align-items: left;
+    }
+
+    body.page2 section.desenvolve {
+        padding: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 0px;
+        margin-top: 140px;
+    }
+
+    body.page2 .desenvolve .itens-bloco .img-itens .img-1 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    body.page2 .desenvolve .itens-bloco .txt-itens h3 {
+        font-size: 55px;
+    }
+
+    body.page2 section.site .txt h1 {
+        font-size: 60px;
+        margin-top: 120px;
+    }
+
+    body.page2 section.verstappen {
+        height: 10vh;
+    }

@@ -1,0 +1,388 @@
+/* Em Gambiarra não se mexe -Bruno Henrique, 04/10/2024 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Afacad Flux", system-ui;
+}
+
+body{
+    background-color: #E3E3E3;
+    transition: .3s;
+}
+
+/* Modo Escuro */
+.trilho{
+    width: 30px;
+    height: 50px;
+    background-color: #c3c3c3;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+}
+.trilho .indicador{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transform: scale(.9);
+    position: absolute;
+    top: 0;
+    transition: .3s;
+}
+header.menu-mob-aberto .trilho{
+    display: block;
+}
+.trilho.dark .indicador{
+    top: 20px;
+}
+body.dark {
+    background-color: #4d4d4d;
+    color: white;
+    position: relative;
+}
+body.dark h3, body.dark p, body.dark .paginaum .icons-pagina i {
+    color: white;
+}
+body.dark section.paginaum {
+    background-color: #2c2b2b;
+}
+body.dark .paginaum button, header.rolar.dark .saiba-mais button {
+    border: 2px solid white;
+    color: white;
+}
+body.dark .paginaum .icons-pagina button:hover, header.rolar.dark .saiba-mais button:hover {
+    background-color: white;
+    color: black;
+}
+body.dark .paginaum .icons-pagina button:hover i, body.dark .paginaum .icons-pagina button:hover p {
+    color: black;
+}
+header.rolar.dark {
+    background-color: #2c2b2b;
+}
+header.rolar.dark .menu-desktop nav ul li a {
+    color: white;
+}
+header.dark .logo img.logo-branca{
+    display: flex;
+}
+header.dark .logo img.logo-preta{
+    display: none;
+}
+header.rolar.dark .menu-mob div{
+    background-color: white;
+}
+
+/* Onde o código do site realmente começa, o resto eu só fiz zoando pra 
+ver se eu sei fazer um tema escuro legal (consegui mas ficou grande) */
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Header Desktop Style poggers */
+header{
+    width: 100%;
+    padding: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+header .logo img{
+    max-width: 300px;
+    cursor: pointer;
+}
+header .logo img.logo-branca{
+    display: flex;
+}
+header .logo img.logo-preta{
+    display: none;
+}
+
+/* Logo + menu Dinâmico */
+header.rolar{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 8px #00000061;
+}
+header.rolar .menu-desktop nav ul li a{
+    color: black;
+}
+header.rolar .saiba-mais button{
+    border: 1px solid black;
+    color: black;
+}
+header.rolar .saiba-mais button:hover{
+    background-color: black;
+    color: white;
+}
+
+header.rolar .logo .logo-branca{
+    display: none;
+}
+header.rolar .logo .logo-preta{
+    display: block;
+}
+
+/* Barra de Navegação Links */
+header .menu-desktop nav ul{
+    list-style-type: none;
+}
+header .menu-desktop nav ul li{
+    display: inline-block;
+    margin: 0 60px;
+    font-size: 22px;
+}
+header .menu-desktop nav ul li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+header .menu-desktop nav ul li a:hover{
+    transform: scale(1.5);
+}
+
+/* Saiba Mais */
+header .saiba-mais button{
+    width: 140px;
+    height: 50px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+header .saiba-mais button:hover{
+    background-color: white;
+    color: black;
+}
+
+/* Icon Menu Mobile */
+header .menu-mob{
+    display: none;
+    position: relative;
+    z-index: 999999999999;
+}
+header .menu-mob div{
+    background-color: white;
+    height: 3px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+header .menu-mob .line-menumob-1{
+    width: 30px;
+}
+header .menu-mob .line-menumob-2{
+    width: 20px;
+}
+header.rolar .menu-mob div{
+    background-color: black;
+}
+header .menu-mob .line-menumob-1.ativo1{
+    transform: rotate(45deg) translate(30%);
+    background-color: white;
+}
+header .menu-mob .line-menumob-2.ativo2{
+    transform: rotate(-45deg) translate(30%);
+    width: 30px;
+    background-color: white;
+}
+
+/* Menu Mobile [Open] */
+header .menu-mobile{
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.911);
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    transition: top .5s;
+}
+header .menu-mobile nav{
+    width: 100%;
+}
+header .menu-mobile nav ul{
+    list-style-type: none;
+}
+header .menu-mobile nav a{
+    color: white;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1px;
+    padding: 20px;
+    display: block;
+    transition: .5s;
+}
+header .menu-mobile nav a:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 9px white;
+}
+header .menu-mobile.abrir{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+}
+body.no-overflow{
+    overflow: hidden;
+}
+
+/* Estilo do Site + Paralax*/
+section.site{
+    height: 99.4vh;
+    background-image: url(../img/capa-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-attachment: fixed; /*Efeito Paralax*/
+}
+.site .interface{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 20;
+}
+.site .txt{
+    margin-top: 75px;
+    text-align: center;
+}
+.site .txt h1{
+    font-size: 5.5em;
+    line-height: 1.1;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 10px;
+}
+.site .txt h1 span{
+    font-weight: 800;
+}
+.site .txt p{
+    font-size: 20px;
+}
+
+/* Estilo Desenvolvimento do Texto */
+section.desenvolve{
+    padding: 80px;
+}
+.desenvolve .itens-bloco{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    margin-bottom: 60px;
+
+}
+.desenvolve .itens-bloco .img-itens img{
+    max-height: 440px;   
+}
+.desenvolve .itens-bloco .txt-itens h3{
+    font-size: 3em;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.desenvolve .itens-bloco .txt-itens h3 span{
+    font-weight: 200;
+}
+
+/* Estilo Next Page */
+section.paginaum{
+    background-color: #fff;
+    padding: 80px;
+    transition: .3s;
+}
+.paginaum .icons-pagina a{
+    text-decoration: none;
+}
+.paginaum .icons-pagina button{
+    display: flex;
+    width: 60%;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.paginaum .icons-pagina button i{
+    font-size: 22px;
+}
+.paginaum .icons-pagina button p{
+    font-size: 20px;
+}
+.paginaum .icons-pagina button:hover{
+    background-color: black;
+}
+.paginaum .icons-pagina button:hover i, .paginaum .icons-pagina button:hover p{
+    color: white;
+}
+
+/* Estilo Rodapé */
+footer{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+}
+footer .top-footer button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: .5s;
+}
+footer .top-footer button:hover{
+    background-color: white;
+    color: black;
+}
+
+footer .middle-footer{
+    margin: 20px;
+}
+footer .middle-footer a{
+    color: white;
+    margin: 0 12.5px;
+    text-decoration: none;
+}
+footer .middle-footer a:hover{
+    text-decoration: underline;
+}
+
+footer .bottom-footer{
+    border-top: 2px solid white;
+}
+footer .bottom-footer p{
+    color: white;
+    margin-top: 10px;
+}
